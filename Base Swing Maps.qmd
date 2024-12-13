@@ -68,9 +68,4 @@ scale_fill_manual(
   )
 )
 
-  
-```
 
-It should look something like
-
-![BaseSwingmap](../figs/Biden%20base-swing.png)
