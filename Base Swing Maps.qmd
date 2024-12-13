@@ -1,23 +1,10 @@
 ---
-title: "DSCI 210: Base/Swing Maps"
-author: "David Gerberry"
+title: "Base/Swing Maps"
+author: "Cole Tenfelde"
 output: html
----
 
-Today's goal is pretty similar to the last one. The only difference is that we now want to identify the precincts that our campaign will consider Base, Swing, and Residuals. The idea here being that
 
--   Base: a precinct where our candidate is expected to receive strong support
--   Swing: a precinct where voters are fairly evenly divided. In other words, our candidate can receive significant support here with the proper messaging
--   Residual: a precinct where voters are not expected to support our candidate strongly
-
-In completing this task, there are essentially two tasks:
-
-1.  You and your campaign teams will have to determine where the \`\`cutoffs'' will be that produce a meaningful distinction of base/swing/residual for your candidate.
-2.  The R programming necessary to color in a map based on those cutoffs.
-
-The same packages will do the trick as last time.
-
-```{r setup, message=FALSE,warning=FALSE}
+{r setup, message=FALSE,warning=FALSE}
 knitr::opts_chunk$set(
 	echo = TRUE,
 	message = FALSE,
@@ -30,9 +17,7 @@ library(readxl)
 library(RColorBrewer)
 ```
 
-# Map from last time
 
-Most of the process of this example the same as the last election maps that we made.
 
 ```{r}
 map2020 <- st_zm(st_read("../data/maps/PRECINCT_052219.shp"))
@@ -56,18 +41,6 @@ mapANDresults2020 %>%
                            limits=c(0,1))
 
 ```
-
-# Base/Swing Maps
-
-In head-to-head elections, the typical definitions of base/swing/residual are give by:
-
--   Base: Greater than 60% support (typically colored red/blue depending on party)
--   Swing: Between 40% and 60% support (typically colored yellow)
--   Residual: Less than 40% support (typically colored red/blue depending on party)
-
-However, groups in the past have had more interesting ideas for this that have been meaningful to their campaign plan (e.g. "Strong Base", "Base", etc.)
-
-Assignment: \* Fill in the code to make a base/swing map relative to your candidate
 
 ```{r}
 map2020 <- st_zm(st_read("../data/maps/PRECINCT_052219.shp"))
