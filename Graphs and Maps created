@@ -14,7 +14,14 @@ ggplot(election_data, aes(x = factor(year), y = registered_voters, fill = factor
        y = "Registered Voters") +
   scale_fill_manual(values = c("2016" = "orange", "2020" = "green", "2024" = "purple")) +
   theme_minimal()
+#####MAGIC NUMBER 
+total_votes <- (PredictedTURNOUT)
 
+# Calculate the magic number (simple majority)
+magic_number <- floor(total_votes / 2) + 1
+
+# Print the magic number
+cat("The magic number needed to win is:", magic_number, "\n")
 
 ###### TURNOUT BY PRECINCT
 
