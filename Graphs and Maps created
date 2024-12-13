@@ -1,0 +1,14 @@
+year <- c(2016, 2020, 2024)
+registered_voters <- c(580354, 600401, 603980) 
+
+# Create a dataframe
+election_data <- data.frame(year, registered_voters)
+
+# Create a bar plot comparing registered voters in 2016, 2020, and 2024
+ggplot(election_data, aes(x = factor(year), y = registered_voters, fill = factor(year))) +
+  geom_bar(stat = "identity") +
+  labs(title = "Comparison of Registered Voters in Hamilton County (10/25/2024)",
+       x = "Year",
+       y = "Registered Voters") +
+  scale_fill_manual(values = c("2016" = "orange", "2020" = "green", "2024" = "purple")) +
+  theme_minimal()
